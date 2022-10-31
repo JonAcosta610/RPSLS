@@ -1,6 +1,7 @@
-# use an integer randomizer that will allow the AI to choose an integer between 0-4.
-# each integer will represent one of the 5 options.
+# use an choice randomizer that will allow the AI to choose a random option
+# each choice will represent one of the 5 options.
 
 import random
-print(random.randrange(0,5))
+game_choices = ["rock", "paper", "scissor", "lizard", "spock"]  
+print(random.choice(game_choices))
 
