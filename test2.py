@@ -6,3 +6,6 @@ player_one.gesture_selection()
 
 player_two = AI("T-1000")
 player_two.gesture_selection()
+
+player_one.game_moves()
+player_two.game_moves()
