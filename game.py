@@ -16,17 +16,17 @@ class Game:
                 print(f"Both users have chosen {self.player_one.choice}!\nTry again!")
             elif self.player_one.choice == "rock":
                 if self.player_two.choice == "scissor":
-                    print(f"Rock smashes scissor!ç")
+                    print(f"Rock smashes scissor!\nCongrats, {self.player_one.name}! You have won this round!")
                     self.player_one.score += 1
                 if self.player_two.choice == "lizard":
                     print(f"Rock smashes lizard!\nCongrats, {self.player_one.name}! You have won this round!")
                     self.player_one.score += 1
                 else:
                     if self.player_two.choice == "paper":
-                        print(f"{self.player_two.choice} covers {self.player_one.choice}!\nThe AI has won this round!\nTry Again!")
+                        print(f"Paper covers rock!\n{self.player_two.name} has won this round!\nTry Again!")
                         self.player_two.score += 1
                     if self.player_two.choice == "spock":
-                        print(f"{self.player_two.choice} vaporizes {self.player_one.choice}!\nThe AI has won this round!\nTry Again!")
+                        print(f"Spock vaporizes rock!\n{self.player_two.name} has won this round!\nTry Again!")
                         self.player_two.score += 1
             elif self.player_one.choice == "paper":
                 if self.player_two.choice == "rock":
@@ -39,6 +39,8 @@ class Game:
                     if self.player_two.choice == "scissor":
                         print(f"{self.player_two.choice} cuts {self.player_one.choice}!\nThe AI has won this round!\nTry again!")
                         self.player_two.score += 1
+                    if self.player_two.choice == "lizard":
+                        print(f"{self.player_two.choice} eats {self.player_one.choice}!\nThe AI has won this round!\nTry again!")
             elif self.choice == "scissor":
                 if self.ai_choice == "paper":
                     print(f"Scissor cuts paper!")

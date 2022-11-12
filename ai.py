@@ -19,12 +19,5 @@ class AI(Player):
     def game_moves(self):
         pass
 
-    # def ai_choice(self):
-    #     self.computer_choice = random.choice(game_choices)
-    #     print(f"\nThe AI has chosen {self.computer_choice}!")
-    #     if self.computer_choice == self.player.player_input:
-    #         print("fBoth Players selected {self.computer_choice}. It's a tie! Try again!")
-    #     elif 
-
     
 
