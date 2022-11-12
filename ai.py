@@ -6,12 +6,12 @@ import random
 
 
 class AI(Player):
-    def __init__(self, name):
-        super().__init__(name)
-        self.ai_score = 0
+    def __init__(self):
+        super().__init__()
+        self.name = "T-1000"
         pass
 
-    def gesture_selection(self):
+    def ai_selection(self):
         self.ai_choice = random.choice(self.gesture_list)
         print(f"AI has chosen {self.ai_choice}!")
         pass

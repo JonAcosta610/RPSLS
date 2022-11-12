@@ -1,9 +1,12 @@
 from player import Player
-from ai import AI
+import random
 
-class Human(Player, AI):
-    def __init__(self, name):
-        super().__init__(name)
+class Human(Player):
+    def __init__(self):
+        super().__init__()
+        self.name = input("Please enter your name here: ")
+        print(f"Hello {self.name}! Welcome to Rock, Paper, Scissor, Lizard, Spock!\nYour opponent today is T-1000!\nGood Luck!")
+
 
     def gesture_selection(self):
         while self.choice not in self.gesture_list:
@@ -11,33 +14,48 @@ class Human(Player, AI):
             self.choice = input("Please choose one of the above! ")
             print(f"The user has chosen {self.choice}!")
 
+    def ai_selection(self):
+        self.ai_choice = random.choice(self.gesture_list)
+        print(f"AI has chosen {self.ai_choice}!")
+
     def game_moves(self):
-        while self.score == 0:
-            if self.gesture_list == self.choice:
-                print(f"Both users have chosen {self.gesture_list}")
-            if self.gesture_list == "rock":
-                if self.choice == "scissor":
+        while self.score < 3:
+            if self.choice == self.ai_choice.ai_choice:
+                print(f"Both users have chosen {self.choice}")
+            elif self.choice == "rock":
+                if self.ai_choice == "scissor":
                     print("Rock smashes scissor!")
-                    # self.score += 1
-                if self.choice == "lizard":
+                    self.score += 1
+                if self.ai_choice == "lizard":
                     print("Rock smashes lizard!")
-            if self.gesture_list == "paper":
-                if self.choice == "rock":
+                    self.score += 1
+                else:
+                    print("AI has won!")
+            elif self.choice == "paper":
+                if self.ai_choice == "rock":
                     print("Paper covers rock!")
-                if self.choice == "spock":
+                    self.score += 1
+                if self.ai_choice == "spock":
                     print("paper disproves spock!")
-            if self.gesture_list == "scissor":
-                if self.choice == "paper":
+                    self.score += 1
+            elif self.choice == "scissor":
+                if self.ai_choice == "paper":
                     print("Scissor cuts paper!")
-                if self.choice == "lizard":
+                    self.score += 1
+                if self.ai_choice == "lizard":
                     print("Scissor decapitates lizard!")
-            if self.gesture_list == "lizard":
-                if self.choice == "spock":
+                    self.score += 1
+            elif self.choice == "lizard":
+                if self.ai_choice == "spock":
                     print("Lizard poisons spock!")
-                if self.choice == "paper":
+                    self.score += 1
+                if self.ai_choice == "paper":
                     print("Lizard eats paper!")
-            if self.gesture_list == "spock":
-                if self.choice == "scissor":
+                    self.score += 1
+            elif self.choice == "spock":
+                if self.ai_choice == "scissor":
                     print("Spock smahses scissor!")
-                if self.choice == "rock":
+                    self.score += 1
+                if self.ai_choice == "rock":
                     print("Spock vaporizes rock!")
+                    self.score += 1
