@@ -8,5 +8,3 @@ class Player:
         self.gesture_list = ["rock", "paper", "scissor", "lizard", "spock"]
 
 
-    def gesture_selection(self):
-        pass

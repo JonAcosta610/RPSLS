@@ -17,3 +17,7 @@ class Human(Player):
     def ai_selection(self):
         self.ai_choice = random.choice(self.gesture_list)
         print(f"AI has chosen {self.ai_choice}!")
+
+    def reset_player_choice(self):
+        self.choice = None
+
