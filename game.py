@@ -45,7 +45,7 @@ class Game:
                     if self.player_two.ai_choice == "scissor":
                         print(f"Scissors cuts paper!\n{self.player_two.name} has won this round!\nTry again!")
                         self.player_two.score += 1
-                    if self.player_two.ai_choice == "lizard":
+                    elif self.player_two.ai_choice == "lizard":
                         print(f"Lizard eats paper!\n{self.player_two.name} has won this round!\nTry again!")
             elif self.player_one.choice == "scissor":
                 if self.player_two.ai_choice == "paper":
@@ -88,6 +88,7 @@ class Game:
                     elif self.player_two.ai_choice == "paper":
                         print(f"Paper disproves spock!\n{self.player_two.name} wins this round!\nTry again!")
                         self.player_two.score += 1
+            
             if self.player_one.score < 2 and self.player_two.score < 2:
                 self.player_one.reset_player_choice()
                 self.player_one.gesture_selection()
